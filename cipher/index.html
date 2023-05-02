@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>GPoeT генератор</title>
+    <link rel="stylesheet" href="../_css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../_img/icon.jpg">
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/">GPoeT генератор</a></h1>
+      <h4><i>Напишие ключевые фразы, смысл которых должен бвть отражен в вашем стихотворении</i></h4>
+    </header>
+
+    <hr noshade>
+
+    <main>
+      <div class="container">
+        <div class="flexbox">
+          <h3>Напишие ключевые фразы</h3>
+          <div class="cp-buttons">
+            <button id="copy-text" class="copy">Copy</button>
+            <button id="paste-text" class="paste">Paste</button>
+          </div>
+        </div>
+        <textarea id="text-input" class="input-field" rows="8"></textarea>
+        <br>
+        <button id="encrypt-button">Сгенерировать</button>
+        <label id="warning-label"></label>
+        <br>
+        <div class="flexbox">
+          <h3>Восхищайтесь результатом:)</h3>
+          <div class="cp-buttons">
+            <button id="copy-code" class="copy">Copy</button>
+          </div>
+        </div>
+        <textarea id="code-input" class="input-field" rows="15"></textarea>
+      </div>
+    </main>
+
+    <footer>
+      <h4>site by @scalettnik</h4>
+    </footer>
+    <script>
+      function copyDivToClipboard() {
+          let range = document.createRange();
+          range.selectNode(document.getElementById("copy-text"));
+          window.getSelection().removeAllRanges(); // clear current selection
+          window.getSelection().addRange(range); // to select text
+          document.execCommand("copy");
+          window.getSelection().removeAllRanges();// to deselect
+      }
+  </script>  
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
